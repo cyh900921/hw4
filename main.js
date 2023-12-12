@@ -48,10 +48,9 @@ document.addEventListener("DOMContentLoaded", async function() {
             x: top30Indices.map(index => iqData.Country[index]),
             y: top30Indices.map(index => iqData.AverageIQ[index]),
             type: 'scatter',
-            mode: 'lines',
+            mode: 'lines+markers',
             name: 'Average IQ',
             line: { color: 'blue' },
-            text: top30Indices.map(index => `Country: ${iqData.Country[index]}<br>Average IQ: ${iqData.AverageIQ[index]}`),
         };
 
         // 創建長條圖
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", async function() {
             type: 'bar',
             name: 'Average IQ by Continent',
             marker: { color: 'lightblue' },
-            text: averageIQByContinent.map(item => `Continent: ${item.continent}<br>Average IQ: ${item.averageIQ}`),
         };
 
         // 創建圓餅圖 (每個洲的諾貝爾獎次數)
@@ -69,7 +67,6 @@ document.addEventListener("DOMContentLoaded", async function() {
             labels: nobelPricesByContinent.map(item => item.continent),
             values: nobelPricesByContinent.map(item => item.totalNobelPrices),
             type: 'pie',
-            text: nobelPricesByContinent.map(item => `Continent: ${item.continent}<br>Total Nobel Prizes: ${item.totalNobelPrices}`),
         };
 
         const lineLayout = {
@@ -77,10 +74,10 @@ document.addEventListener("DOMContentLoaded", async function() {
             annotations: [
                 {
                     x: 0.5,
-                    y: 1.05,
+                    y: 1.13,
                     xref: 'paper',
                     yref: 'paper',
-                    text: '這是我在 Kaggle 當中所找到的全球 IQ 值，我做了以下三個不同的圖表來顯示。',
+                    text: '此圖為折線圖，用來呈現全球IQ前30名的國家和對應IQ值。',
                     showarrow: false,
                     font: {
                         size: 12,
@@ -93,14 +90,73 @@ document.addEventListener("DOMContentLoaded", async function() {
         const barLayout = {
             title: 'Average IQ by Continent',
             annotations: [
-                // 如果有的話，在這裡加入文字
+                {
+                    x: 0.5,
+                    y: 1.13,
+                    xref: 'paper',
+                    yref: 'paper',
+                    text: '此圖為長條圖，用來呈現每個洲的平均IQ值。',
+                    showarrow: false,
+                    font: {
+                        size: 12,
+                        color: 'black'
+                    }
+                }
             ]
         };
 
         const nobelPieLayout = {
             title: 'Nobel Prize Distribution by Continent',
             annotations: [
-                // 如果有的話，在這裡加入文字
+                {
+                    x: 1.00,
+                    y: 1.15,
+                    xref: 'paper',
+                    yref: 'paper',
+                    text: '此圖為圓餅圖，用來呈現每個洲所獲得的諾貝爾得獎百分比。',
+                    showarrow: false,
+                    font: {
+                        size: 12,
+                        color: 'black'
+                    }
+                }
+            ]
+        };
+
+        // 定義全局的 layout
+        const globalLayout = {
+            title: {
+                text: 'Global IQ Visualization',
+                font: {
+                    size: 16,
+                    color: 'black'
+                }
+            },
+            annotations: [
+                {
+                    x: 0.5,
+                    y: 1.1,
+                    xref: 'paper',
+                    yref: 'paper',
+                    text: '這是我在 Kaggle 當中所找到的全球 IQ 值，我做了以下三個不同的圖表來顯示，分別是折線圖、長條圖、圓餅圖。',
+                    showarrow: false,
+                    font: {
+                        size: 14,
+                        color: 'black'
+                    }
+                },
+                {
+                    x: 0.5,
+                    y: 0.7,
+                    xref: 'paper',
+                    yref: 'paper',
+                    text: '資料來源：Kaggle',
+                    showarrow: false,
+                    font: {
+                        size: 12,
+                        color: 'black'
+                    }
+                }
             ]
         };
 
