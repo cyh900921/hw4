@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", async function() {
             type: 'scatter',
             mode: 'lines',
             name: 'Average IQ',
-            line: { color: 'blue' }
+            line: { color: 'blue' },
+            text: top30Indices.map(index => `Country: ${iqData.Country[index]}<br>Average IQ: ${iqData.AverageIQ[index]}`),
         };
 
         // 創建長條圖
@@ -59,14 +60,16 @@ document.addEventListener("DOMContentLoaded", async function() {
             y: averageIQByContinent.map(item => item.averageIQ),
             type: 'bar',
             name: 'Average IQ by Continent',
-            marker: { color: 'lightblue' }
+            marker: { color: 'lightblue' },
+            text: averageIQByContinent.map(item => `Continent: ${item.continent}<br>Average IQ: ${item.averageIQ}`),
         };
 
         // 創建圓餅圖 (每個洲的諾貝爾獎次數)
         const nobelPieChart = {
             labels: nobelPricesByContinent.map(item => item.continent),
             values: nobelPricesByContinent.map(item => item.totalNobelPrices),
-            type: 'pie'
+            type: 'pie',
+            text: nobelPricesByContinent.map(item => `Continent: ${item.continent}<br>Total Nobel Prizes: ${item.totalNobelPrices}`),
         };
 
         const lineLayout = { title: 'Top 30 Average IQ by Country' };
