@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             title: 'Nobel Prize Distribution by Continent',
             annotations: [
                 {
-                    x: 1.00,
+                    x: 0.95,
                     y: 1.15,
                     xref: 'paper',
                     yref: 'paper',
@@ -120,31 +120,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                         color: 'black'
                     }
                 }
-            ]
-        };
-
-        // 定義全局的 layout
-        const globalLayout = {
-            title: {
-                text: 'Global IQ Visualization',
-                font: {
-                    size: 16,
-                    color: 'black'
-                }
-            },
-            annotations: [
-                {
-                    x: 0.5,
-                    y: 1.1,
-                    xref: 'paper',
-                    yref: 'paper',
-                    text: '這是我在 Kaggle 當中所找到的全球 IQ 值，我做了以下三個不同的圖表來顯示，分別是折線圖、長條圖、圓餅圖。',
-                    showarrow: false,
-                    font: {
-                        size: 14,
-                        color: 'black'
-                    }
-                },
             ]
         };
 
