@@ -72,9 +72,37 @@ document.addEventListener("DOMContentLoaded", async function() {
             text: nobelPricesByContinent.map(item => `Continent: ${item.continent}<br>Total Nobel Prizes: ${item.totalNobelPrices}`),
         };
 
-        const lineLayout = { title: 'Top 30 Average IQ by Country' };
-        const barLayout = { title: 'Average IQ by Continent' };
-        const nobelPieLayout = { title: 'Nobel Prize Distribution by Continent' };
+        const lineLayout = {
+            title: 'Top 30 Average IQ by Country',
+            annotations: [
+                {
+                    x: 0.5,
+                    y: 1.05,
+                    xref: 'paper',
+                    yref: 'paper',
+                    text: '這是我在 Kaggle 當中所找到的全球 IQ 值，我做了以下三個不同的圖表來顯示。',
+                    showarrow: false,
+                    font: {
+                        size: 12,
+                        color: 'black'
+                    }
+                }
+            ]
+        };
+
+        const barLayout = {
+            title: 'Average IQ by Continent',
+            annotations: [
+                // 如果有的話，在這裡加入文字
+            ]
+        };
+
+        const nobelPieLayout = {
+            title: 'Nobel Prize Distribution by Continent',
+            annotations: [
+                // 如果有的話，在這裡加入文字
+            ]
+        };
 
         Plotly.newPlot('myGraph', [lineChart], lineLayout);
         Plotly.newPlot('myGraph-bar', [barChart], barLayout);
