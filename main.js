@@ -123,30 +123,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             ]
         };
 
-         // 定義全局的 layout
-         const globalLayout = {
-            title: {
-                text: 'Global IQ Visualization',
-                font: {
-                    size: 16,
-                    color: 'black'
-                }
-            },
-            annotations: [
-                {
-                    x: 0.5,
-                    y: 1.1,
-                    xref: 'paper',
-                    yref: 'paper',
-                    text: '這是我在 Kaggle 當中所找到的全球 IQ 值，我做了以下三個不同的圖表來顯示，分別是折線圖、長條圖、圓餅圖。',
-                    showarrow: false,
-                    font: {
-                        size: 14,
-                        color: 'black'
-                    }
-                },
-            ]
-        };
+
 
         Plotly.newPlot('myGraph', [lineChart], lineLayout);
         Plotly.newPlot('myGraph-bar', [barChart], barLayout);
