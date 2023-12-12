@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             title: 'Nobel Prize Distribution by Continent',
             annotations: [
                 {
-                    x: 0.95,
+                    x: 0.90,
                     y: 1.15,
                     xref: 'paper',
                     yref: 'paper',
