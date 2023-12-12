@@ -145,18 +145,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                         color: 'black'
                     }
                 },
-                {
-                    x: 0.5,
-                    y: 0.7,
-                    xref: 'paper',
-                    yref: 'paper',
-                    text: '資料來源：Kaggle',
-                    showarrow: false,
-                    font: {
-                        size: 12,
-                        color: 'black'
-                    }
-                }
             ]
         };
 
