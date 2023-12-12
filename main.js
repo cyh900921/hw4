@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             annotations: [
                 {
                     x: 0.5,
-                    y: 0.7,
+                    y: 1.15,
                     xref: 'paper',
                     yref: 'paper',
                     text: '此圖為折線圖，用來呈現全球IQ前30名的國家和對應IQ值。',
